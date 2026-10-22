@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Ajoute au message de commit le prénom du développeur enregistré sur cet ordinateur,
+# pour attribuer le commit à Lenny ou Yotam indépendamment du compte GitHub utilisé.
+racine="$(git rev-parse --show-toplevel)"
+nom="$("$racine/scripts/collab/identite.sh" 2>/dev/null)"
+case "$nom" in
+  Lenny|Yotam)
+    git interpret-trailers --in-place --if-exists doNothing --trailer "Developpeur: $nom" "$1" ;;
+  *)
+    echo "Note : identité inconnue sur cet ordinateur (scripts/collab/identite.sh <Lenny|Yotam>)." >&2 ;;
+esac
+exit 0
