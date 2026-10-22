@@ -1,0 +1,5 @@
+# Lors d'une fusion locale, garder les entrées du journal des deux côtés
+# au lieu de créer un conflit (les deux développeurs ajoutent en haut du fichier).
+COLLABORATION.md merge=union
+*.sh text eol=lf
+.githooks/* text eol=lf

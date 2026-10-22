@@ -1,0 +1,8 @@
+# --- Collaboration (propre à chaque ordinateur, jamais partagé) ---
+.claude/identite.local
+.claude/settings.local.json
+.claude/collab-rappel.local
+
+# --- Système ---
+.DS_Store
+Thumbs.db
